@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnviroFly - Services</title>
+  <link rel="stylesheet" href="default.css" />
+  <link rel="stylesheet" href="fonts.css" />
+</head>
+<body>
+  <div id="header-wrapper">
+    <div id="header" class="container">
+      <div id="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="current_page_item"><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div id="logo">
+        <h1><a href="#">EnviroFly</a></h1>
+        <span>Photography Services</span>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="title"><h2>Order Form</h2></div>
+    <form id="orderForm">
+      <label><input type="checkbox" value="20"> 8x10 Photo Print ($20)</label><br />
+      <label><input type="checkbox" value="10"> Digital Download ($10)</label><br />
+      <label><input type="checkbox" value="50"> Commercial License ($50)</label><br />
+      <p>Total: $<span id="total">0</span></p>
+    </form>
+  </div>
+  <script>
+    document.querySelectorAll('input[type="checkbox"]').forEach(el => {
+      el.addEventListener('change', () => {
+        let total = 0;
+        document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+          total += parseFloat(cb.value);
+        });
+        document.getElementById('total').innerText = total.toFixed(2);
+      });
+    });
+  </script>
+</body>
+</html>

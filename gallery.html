@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnviroFly - Gallery</title>
+  <link rel="stylesheet" href="default.css" />
+  <link rel="stylesheet" href="fonts.css" />
+  <style>
+    .slide { display: none; width: 100%; }
+    .slide.active { display: block; }
+  </style>
+</head>
+<body>
+  <div id="header-wrapper">
+    <div id="header" class="container">
+      <div id="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="current_page_item"><a href="gallery.html">Gallery</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div id="logo">
+        <h1><a href="#">EnviroFly</a></h1>
+        <span>Photo Gallery</span>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="title"><h2>Gallery Slider</h2></div>
+    <div class="slider">
+      <img src="images/A7401717-2.jpg" alt="Nature 1" class="slide active" />
+      <img src="images/A7401549-2.jpg" alt="Nature 2" class="slide" />
+      <img src="images/A7401732-2.jpg" alt="Nature 3" class="slide" />
+    </div>
+  </div>
+  <script>
+    let slides = document.querySelectorAll('.slide');
+    let index = 0;
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 3000);
+  </script>
+</body>
+</html>
